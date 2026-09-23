@@ -27,9 +27,9 @@ assignment/
 
 ## Setup
 
-Fork the assignment repository on GitHub and clone your fork the way Lecture 01 did: Command Palette → **Git: Clone**, paste your fork's URL, pick a folder, and open it. Then open **Terminal → New Terminal** in VS Code at the assignment directory (Ctrl+Shift+backtick, also Control on Mac). If you use a native terminal or WSL Ubuntu instead, `cd` into the assignment directory first. Run `ls data` and expect `clinic_encounters.csv`.
+Fork the assignment repository on GitHub and clone your fork the way Lecture 01 did: Command Palette → **Git: Clone**, paste your fork's URL, pick a folder, and open it. Then open **Terminal → New Terminal** in VS Code at the assignment directory (Ctrl+Shift+backtick, also Control on Mac). If you use a native terminal or WSL Ubuntu instead, `cd` into the assignment directory first. Run `ls data` and expect `clinic_encounters.csv`. This clone is a new repository, so before your first commit run Lecture 02's two `git config user.name "..."` and `git config user.email "..."` lines in this terminal, with your name and GitHub noreply email.
 
-Open the repository in VS Code, switch to `main`, select **Sync Changes**, and finish any outstanding changes. Open the Command Palette, select **Git: Create Branch**, and name the new branch `feature/clinic-report`. Work on that branch until the Submit section.
+Open the repository in VS Code, switch to `main`, select **Sync Changes** if Source Control shows it, and finish any outstanding changes. Open the Command Palette, select **Git: Create Branch**, and name the new branch `feature/clinic-report`. Work on that branch until the Submit section.
 
 ## Task 1: Document the project
 
@@ -43,7 +43,7 @@ Replace the `TODO` line under `## Run` with a Python 3.13 command that runs your
 
 ### 1.3 Keep the Python cache out of Git
 
-Importing `vitals_tools` creates a `__pycache__/` folder of compiled files. Replace the two `TODO` comments in `.gitignore` with the pattern for that folder and the pattern for the compiled files it holds. The standard pair is `__pycache__/` and `*.pyc`; GitHub's own Python template writes the second one as `*.py[cod]`, which is equally good.
+Importing `vitals_tools` creates a `__pycache__/` folder of compiled files. Replace the two `TODO` comments in `.gitignore` with the pattern for that folder and the pattern for the compiled files it holds. The standard pair is `__pycache__/` and `*.pyc`; GitHub's own Python template writes the second one as `*.py[codz]`, which is equally good.
 
 > **Checkpoint: `README.md` and `.gitignore`**
 > Confirm in Source Control that both files appear under **Changes**, stage them, and commit with `Document the clinic report`.
@@ -83,7 +83,7 @@ Lowest systolic: <smallest usable reading> mmHg
 
 - Some patients came in twice, so `Patients seen` is not the same as `Usable encounters`. A patient whose only row was skipped was not seen.
 - `Mean systolic` averages every usable reading, including a patient's second visit. Give at least one decimal place. Rounding is not a trap: a value within 0.1 mmHg of the mean passes, and so does the mean rounded to however many decimal places you wrote.
-- Write each label exactly as shown, followed by a colon and then the number. Around that, the checks are relaxed: letter case and the spaces between words do not matter, the `mmHg` unit is optional (`mm Hg` is fine too), and words around the number are ignored. Extra lines in the file are ignored. What is not optional is the label wording and the colon, so `Usable encounters = 25` or `usable -> 25` does not count.
+- Write each label exactly as shown, followed by a colon and then the number. Around that, the checks are relaxed: letter case and the spaces between words do not matter, the `mmHg` unit is optional (`mm Hg` is fine too), and words around the number are ignored. Extra lines in the file are ignored. What is not optional is the label wording and the colon, so `Usable encounters = 12` or `usable -> 12` does not count.
 
 Read the file back and print it, the way Demo 3 does, so you can see what landed on disk.
 

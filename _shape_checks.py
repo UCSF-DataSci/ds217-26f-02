@@ -42,7 +42,7 @@ NUMBER = re.compile(r"(?<![\w.])[-+]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?")
 PATIENT_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
 CACHE_DIRECTORY_PATTERN = re.compile(r"^/?(?:\*\*/)?__pycache__/?(?:\*\*?/?)?$")
 CACHE_FILE_PATTERN = re.compile(
-    r"^/?(?:\*\*/)?(?:__pycache__/)?\*(?:\.py(?:[cod]|\[[cod]+\])|\$py\.class)$",
+    r"^/?(?:\*\*/)?(?:__pycache__/)?\*(?:\.py(?:[cod]|\[[codz]+\])|\$py\.class)$",
     re.IGNORECASE,
 )
 LABEL_LINES = ("cutoff", "reason")
